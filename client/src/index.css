@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #1a1410; color: #f2ead8; font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #221c16; }
+  ::-webkit-scrollbar-thumb { background: #7a5a22; }
+}
+@layer components {
+  .btn-gold { @apply inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-ink text-xs font-medium tracking-widest uppercase transition-all duration-300 hover:bg-gold-lt hover:-translate-y-0.5; }
+  .btn-ghost { @apply inline-flex items-center gap-2 px-8 py-3.5 bg-transparent text-cream text-xs font-medium tracking-widest uppercase border border-border transition-all duration-300 hover:border-gold hover:text-gold hover:-translate-y-0.5; }
+  .section-tag { @apply inline-flex items-center gap-3 text-gold text-xs font-medium tracking-widest uppercase mb-5; }
+  .section-tag::before { content: ''; @apply block w-7 h-px bg-gold; }
+  .section-title { @apply font-display font-light leading-none text-white; font-size: clamp(38px, 4.5vw, 68px); }
+  .input-field { @apply w-full bg-wood border border-border text-cream font-body text-sm font-light px-4 py-3 outline-none focus:border-gold transition-colors; }
+  .form-label { @apply block text-xs font-medium tracking-widest uppercase text-muted mb-2; }
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+.animate-marquee { animation: marquee 25s linear infinite; }
+.animate-fade-up { animation: fadeUp 0.6s ease forwards; }
